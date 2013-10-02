@@ -13,5 +13,7 @@ $ sudo make install
 
 Then simply run python setup.py, this will install all neccessary requirements.
 
-To execute, simply run python mosaic.py -query "automobile" -n 50 -targetImage "yourphoto.jpg" -f "outputfile.jpg"
-
+To execute, two different executions of the script are required, first download a set of images to be the tiles in the mosaic:
+  python mosaic.py -a "download" -q "automobile" -n 50 
+Next, execute with --action compose to create the Mosaic using the targetfile as the template
+  python mosaic.py -a "compose" -t yourphoto.jpg -f outputfile.jpg -s ./images
